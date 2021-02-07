@@ -2,7 +2,7 @@
 This repository is related to implementaionl of using combinational and sequential synthesis tools like 'ABC', 'Yosys'. This project shows circuit synthesis for combinational circuit (ISCAS85) and sequential circuit (IWLS_2005/ISCAS).
 
 ## Tool setup
-I will discuss about installation of two tools ([ABC](https://people.eecs.berkeley.edu/~alanmi/abc/) and [Yosys](http://www.clifford.at/yosys/)) here in linux environment (Ubuntu 20.04). 
+I will discuss about installation of two tools ([ABC](https://people.eecs.berkeley.edu/~alanmi/abc/), [NEOS](https://bitbucket.org/kavehshm/neos/src/master/) and [Yosys](http://www.clifford.at/yosys/)) here in linux environment (Ubuntu 20.04). 
 
 ### ABC setup
 - Open terminal
@@ -11,7 +11,7 @@ I will discuss about installation of two tools ([ABC](https://people.eecs.berkel
 ```console
 tc@pc:~$ sudo apt install berkeley-abc
 ```
-
+### NEOS setup
 There are other ways to use ABC. One of those is using [NEOS](https://bitbucket.org/kavehshm/neos/src/master/). You can check the details from this [link](https://bitbucket.org/kavehshm/neos/src/master/). Only tricky part is linking libreadline.so.6. You can use the following commands in you linux terminal. It will solve the problem. I have used Ubuntu 20.04.
 
 ```console
