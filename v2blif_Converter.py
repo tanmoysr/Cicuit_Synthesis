@@ -1,5 +1,7 @@
 # input files for sequential circuits should be in BLIF format
 # input files for combinatorial circuits could be in Verilog/BLIF/Bench format
+# Author: Tanmoy Chowdhury
+# Contact: tchowdh6@masonlive.gmu.edu
 import os
 import subprocess
 import random
