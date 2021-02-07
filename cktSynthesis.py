@@ -1,6 +1,6 @@
 # input files for sequential circuits should be in BLIF format
 # input files for combinatorial circuits could be in Verilog/BLIF/Bench format. 
-#But it sometimes gives error. So it is better to convert the verilog file to blif file at first.
+# But it sometimes gives error. So it is better to convert the verilog file to blif file at first.
 # Author: Tanmoy Chowdhury
 # Contact: tchowdh6@masonlive.gmu.edu
 
