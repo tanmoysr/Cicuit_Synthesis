@@ -28,7 +28,7 @@ tc@pc:~$ sudo ln -s libreadline.so.8.0 libreadline.so.6
 tc@pc:~$ sudo apt-get install -y yosys
 ```
 
-## Cicuit Synthesis
+## Circuit Synthesis
 Here I posted the code for two types of circuits (sequential and combinational) syntheses.
 For sequential circuit synthesis use blif format as input and run [cktSynthesis.py](/cktSynthesis.py).
 For combinational circuit if you have verilog file, then use [v2blif_Converter.py](/v2blif_Converter.py) to convert the verilog format file to blif format. Make sure you have installed ABC and Yosys in your system. Then use [cktSynthesis.py](/cktSynthesis.py) for circuit synthesis.
