@@ -1,4 +1,4 @@
-# Cicuit_Synthesis
+# Circuit Synthesis
 This repository is related to implementaionl of using combinational and sequential synthesis tools like 'ABC', 'Yosys'. This project shows circuit synthesis for combinational circuit (ISCAS85) and sequential circuit (IWLS_2005/ISCAS).
 
 ## Tool setup
