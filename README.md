@@ -29,7 +29,11 @@ tc@pc:~$ sudo apt-get install -y yosys
 ```
 
 ## Circuit Synthesis
-Here I posted the code for two types of circuits (sequential and combinational) syntheses.
+Here I posted the code for two types of circuits (sequential and combinational) syntheses. You need to define the installation path of 'ABC' and 'Yosys'. You can find the location by using following command:
+```console
+tc@pc:~$ whereis yosys
+tc@pc:~$ whereis berkeley-abc
+```
 For sequential circuit synthesis use blif format as input and run [cktSynthesis.py](/cktSynthesis.py).
 For combinational circuit if you have verilog file, then use [v2blif_Converter.py](/v2blif_Converter.py) to convert the verilog format file to blif format. Make sure you have installed ABC and Yosys in your system. Then use [cktSynthesis.py](/cktSynthesis.py) for circuit synthesis.
 If you want to use verilog file without converting to blif format then you can try NEOS also.
