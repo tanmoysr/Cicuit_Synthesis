@@ -47,13 +47,9 @@ tc@pc:~$ ./neos --use_verilog -e xorprob ./c17.v ./c17_enc.v 10
 ## Using Yosys for making schematic diagram
 ```console
 tc@pc:~$ yosys
-yosys> read_verilog s27.v
-yosys> hierarchy -check
-yosys> proc
-yosys> opt
-yosys> fsm
-yosys> opt
-yosys> show
+yosys> read_liberty GSCLib_3.0.lib
+yosys> read_verilog c17.v
+yosys> show c17.v
 ```
 
 ## Benchmark
