@@ -25,6 +25,8 @@ tc@pc:~$ sudo ln -s libreadline.so.8.0 libreadline.so.6
 - Run the following line
 
 ```console
+tc@pc:~$ sudo add-apt-repository ppa:saltmakrell/ppa
+tc@pc:~$ sudo apt-get update
 tc@pc:~$ sudo apt-get install -y yosys
 ```
 
@@ -33,6 +35,7 @@ Here I posted the code for two types of circuits (sequential and combinational) 
 ```console
 tc@pc:~$ whereis yosys
 tc@pc:~$ whereis berkeley-abc
+tc@pc:~$ dpkg -L berkeley-abc
 ```
 For sequential circuit synthesis use blif format as input and run [cktSynthesis.py](/cktSynthesis.py).
 For combinational circuit if you have verilog file, then use [v2blif_Converter.py](/v2blif_Converter.py) to convert the verilog format file to blif format. Make sure you have installed ABC and Yosys in your system. Then use [cktSynthesis.py](/cktSynthesis.py) for circuit synthesis.
@@ -41,7 +44,17 @@ If you want to use verilog file without converting to blif format then you can t
 ```console
 tc@pc:~$ ./neos --use_verilog -e xorprob ./c17.v ./c17_enc.v 10
 ```
-
+## Using Yosys for making schematic diagram
+```console
+tc@pc:~$ yosys
+yosys> read_verilog s27.v
+yosys> hierarchy -check
+yosys> proc
+yosys> opt
+yosys> fsm
+yosys> opt
+yosys> show
+```
 
 ## Benchmark
 - [IWLS 2005 Benchmark](https://iwls.org/iwls2005/benchmarks.html)
