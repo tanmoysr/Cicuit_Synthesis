@@ -22,4 +22,6 @@ with open('GSCLib_3.0.lib', 'r') as gsc_file: #open the file
             GSE_LIB[cell_name]['pins'][pin_name]['fall_capacitance'] = float(pin.split(';')[3].split(':')[-1].strip())
             if GSE_LIB[cell_name]['pins'][pin_name]['direction']=="output":
                 GSE_LIB[cell_name]['pins'][pin_name]['max_capacitance'] = float(pin.split(';')[4].split(':')[-1].strip())
+ with open('GSE_LIB_3.json', 'w') as outfile:
+    json.dump(GSE_LIB, outfile)
                 
