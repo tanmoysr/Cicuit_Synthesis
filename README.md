@@ -49,9 +49,26 @@ tc@pc:~$ ./neos --use_verilog -e xorprob ./c17.v ./c17_enc.v 10
 tc@pc:~$ yosys
 yosys> read_liberty GSCLib_3.0.lib
 yosys> read_verilog c17.v
-yosys> show c17.v
+yosys> show c17
 ```
-
+## Using Yosys for making CNF from Verilog
+```console
+tc@pc:~$ yosys
+yosys> read_liberty GSCLib_3.0.lib
+yosys> design -save lib
+yosys> read_verilog c17.v
+yosys> hierarchy -check
+yosys> prep -flatten -top c17
+yosys> proc
+yosys> opt
+yosys> fsm
+yosys> opt
+yosys> memory
+yosys> opt
+yosys> techmap
+yosys> opt
+yosys> sat -dump_cnf c17_cnf c17
+```
 ## Benchmark
 - [IWLS 2005 Benchmark](https://iwls.org/iwls2005/benchmarks.html)
 - [ISCAS85 verilog format download link](http://www.pld.ttu.ee/~maksim/benchmarks/iscas85/verilog/)
