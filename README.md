@@ -31,6 +31,20 @@ tc@pc:~$ sudo apt-get install -y yosys
 ```
 
 ## Circuit Synthesis
+
+Very basic comands for circuit synthesis by using 'ABC'
+```console
+tc@pc:~$ berkeley-abc
+abc> read_lib GSCLib_3.0.lib
+abc> read c17.blif
+abc> strash
+abc> balance
+abc> refactor
+abc> map
+abc> stime
+abc> write_verilog c17.v
+```
+
 Here I posted the code for two types of circuits (sequential and combinational) syntheses. You need to define the installation path of 'ABC' and 'Yosys'. You can find the location by using following command:
 ```console
 tc@pc:~$ whereis yosys
