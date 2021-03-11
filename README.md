@@ -30,6 +30,30 @@ tc@pc:~$ sudo apt-get update
 tc@pc:~$ sudo apt-get install -y yosys
 ```
 
+## Converting bench to verilog file
+```console
+tc@pc:~$ berkeley-abc
+abc> read_bench c17.bench
+abc> write_verilog c17.v
+```
+
+## Making schematic diagram
+
+```console
+tc@pc:~$ yosys
+yosys> read_verilog c17.v
+yosys> synth -top c17
+yosys> show c17
+```
+
+If you want to use customized library
+```console
+tc@pc:~$ yosys
+yosys> read_liberty GSCLib_3.0.lib
+yosys> read_verilog c17.v
+yosys> show c17
+```
+
 ## Circuit Synthesis
 
 Very basic comands for circuit synthesis by using 'ABC'
@@ -58,13 +82,7 @@ If you want to use verilog file without converting to blif format then you can t
 ```console
 tc@pc:~$ ./neos --use_verilog -e xorprob ./c17.v ./c17_enc.v 10
 ```
-## Using Yosys for making schematic diagram
-```console
-tc@pc:~$ yosys
-yosys> read_liberty GSCLib_3.0.lib
-yosys> read_verilog c17.v
-yosys> show c17
-```
+
 ## Using Yosys for making CNF from Verilog
 ```console
 tc@pc:~$ yosys
